@@ -1,3 +1,4 @@
+```
 gestion-stock/
 ├── index.php
 ├── config/
@@ -20,3 +21,5 @@ gestion-stock/
 └── assets/
     └── css/
         └── style.css
+
+```
