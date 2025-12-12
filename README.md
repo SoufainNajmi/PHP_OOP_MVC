@@ -1,3 +1,4 @@
+<img src="/assets/img/landing page.png">
 ```
 gestion-stock/
 ├── index.php
