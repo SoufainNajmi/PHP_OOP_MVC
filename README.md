@@ -1,5 +1,7 @@
 <img src="/assets/img/landing page.png">
 
+# structure details
+
 ```
 gestion-stock/
 ├── index.php
