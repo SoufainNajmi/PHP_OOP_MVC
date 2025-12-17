@@ -18,6 +18,7 @@ class produit{
     public function __construct($db) {
         $this->conn = $db;
     }
+    
      public function read() {
         $query = "SELECT p.*, c.name as category_name, s.name as supplier_name 
                   FROM " . $this->table . " p
