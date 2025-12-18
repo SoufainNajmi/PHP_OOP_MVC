@@ -89,5 +89,20 @@ class produit{
         }
         return false;
     }
+
+     public function update() {
+        $query = "UPDATE " . $this->table . "
+                  SET name = :name,
+                      description = :description,
+                      price = :price,
+                      quantity = :quantity,
+                      category_id = :category_id,
+                      supplier_id = :supplier_id,
+                      min_stock = :min_stock,
+                      max_stock = :max_stock
+                  WHERE id = :id";
+
+        $stmt = $this->conn->prepare($query);
+     }
 }
 ?>
