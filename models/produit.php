@@ -103,6 +103,31 @@ class produit{
                   WHERE id = :id";
 
         $stmt = $this->conn->prepare($query);
-     }
+     
+        $this->name = htmlspecialchars(strip_tags($this->name));
+        $this->description = htmlspecialchars(strip_tags($this->description));
+        $this->price = htmlspecialchars(strip_tags($this->price));
+        $this->quantity = htmlspecialchars(strip_tags($this->quantity));
+        $this->category_id = htmlspecialchars(strip_tags($this->category_id));
+        $this->supplier_id = htmlspecialchars(strip_tags($this->supplier_id));
+        $this->min_stock = htmlspecialchars(strip_tags($this->min_stock));
+        $this->max_stock = htmlspecialchars(strip_tags($this->max_stock));
+        $this->id = htmlspecialchars(strip_tags($this->id));
+
+        $stmt->bindParam(':name', $this->name);
+        $stmt->bindParam(':description', $this->description);
+        $stmt->bindParam(':price', $this->price);
+        $stmt->bindParam(':quantity', $this->quantity);
+        $stmt->bindParam(':category_id', $this->category_id);
+        $stmt->bindParam(':supplier_id', $this->supplier_id);
+        $stmt->bindParam(':min_stock', $this->min_stock);
+        $stmt->bindParam(':max_stock', $this->max_stock);
+        $stmt->bindParam(':id', $this->id);
+
+        if($stmt->execute()) {
+            return true;
+        }
+        return false;
+    }
 }
 ?>
