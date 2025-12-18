@@ -149,5 +149,18 @@ class produit{
         }
         return "Normal";
     }
+    
+       public function updateQuantity($newQuantity) {
+        $query = "UPDATE " . $this->table . " SET quantity = :quantity WHERE id = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':quantity', $newQuantity);
+        $stmt->bindParam(':id', $this->id);
+
+        if($stmt->execute()) {
+            $this->quantity = $newQuantity;
+            return true;
+        }
+        return false;
+    }
 }
 ?>
