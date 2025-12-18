@@ -140,5 +140,14 @@ class produit{
         }
         return false;
     }
+    
+     public function checkStockAlert() {
+        if($this->quantity <= $this->min_stock) {
+            return "Stock bas!";
+        } elseif($this->quantity >= $this->max_stock) {
+            return "Stock élevé!";
+        }
+        return "Normal";
+    }
 }
 ?>
