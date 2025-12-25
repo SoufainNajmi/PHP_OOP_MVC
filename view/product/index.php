@@ -60,3 +60,8 @@
         </div>
     </div>
 </div>
+<?php
+$content = ob_get_clean();
+$page_title = "Produits";
+include 'views/layout.php'; 
+?>
