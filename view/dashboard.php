@@ -86,4 +86,49 @@
             </div>
         </div>
     </div>
+     <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5>Derniers Mouvements</h5>
+            </div>
+            <div class="card-body">
+                <?php if(count($recentMovements) > 0): ?>
+                <div class="table-responsive">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>Produit</th>
+                                <th>Type</th>
+                                <th>Quantité</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach($recentMovements as $movement): ?>
+                            <tr>
+                                <td><?php echo htmlspecialchars($movement['product_name']); ?></td>
+                                <td>
+                                    <span class="badge bg-<?php echo $movement['movement_type'] == 'IN' ? 'success' : 'danger'; ?>">
+                                        <?php echo $movement['movement_type']; ?>
+                                    </span>
+                                </td>
+                                <td><?php echo $movement['quantity']; ?></td>
+                                <td><?php echo date('d/m/Y H:i', strtotime($movement['created_at'])); ?></td>
+                            </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+                <?php else: ?>
+                <p>Aucun mouvement récent.</p>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</div>
+<?php 
+$content = ob_get_clean();
+$page_title = "Tableau de Bord";
+include 'views/layout.php'; 
+?>
     
