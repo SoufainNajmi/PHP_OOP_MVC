@@ -36,5 +36,31 @@
         </div>
     </nav>
     
+    <div class="container mt-4">
+        <?php if(isset($_GET['message'])): ?>
+            <div class="alert alert-<?php echo $_GET['message'] == 'error' ? 'danger' : 'success'; ?> alert-dismissible fade show">
+                <?php
+                switch($_GET['message']) {
+                    case 'created':
+                        echo "Enregistrement créé avec succès!";
+                        break;
+                    case 'updated':
+                        echo "Enregistrement mis à jour avec succès!";
+                        break;
+                    case 'deleted':
+                        echo "Enregistrement supprimé avec succès!";
+                        break;
+                    case 'error':
+                        echo "Une erreur est survenue!";
+                        break;
+                }
+                ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        <?php endif; ?>
+
+        <?php echo $content; ?>
+    </div>
+    
 </body>
 </html>
