@@ -3,27 +3,46 @@
 # structure details
 
 ```
-gestion-stock/
-├── index.php
+SYSTÈME DE GESTION DE STOCK/
+├── assets/
+│   ├── css/
+│   │   └── style.css
+│   └── js/
+│       └── script.js
 ├── config/
-│   └── Database.php
+│   └── database.php
+├── controllers/
+│   ├── DashboardController.php
+│   ├── ProductController.php
+│   ├── CategoryController.php
+│   ├── SupplierController.php
+│   └── StockMovementController.php
 ├── models/
 │   ├── Category.php
 │   ├── Product.php
-│   ├── Supplier.php
-│   └── StockMovement.php
-├── controllers/
-│   ├── ProductController.php
-│   └── DashboardController.php
+│   ├── StockMovement.php
+│   └── Supplier.php
 ├── views/
 │   ├── products/
-│   │   ├── index.php
 │   │   ├── create.php
-│   │   └── edit.php
+│   │   ├── edit.php
+│   │   └── index.php
+│   ├── categories/
+│   │   ├── create.php
+│   │   ├── edit.php
+│   │   └── index.php
+│   ├── suppliers/
+│   │   ├── create.php
+│   │   ├── edit.php
+│   │   └── index.php
+│   ├── movements/
+│   │   ├── create.php
+│   │   ├── edit.php
+│   │   └── index.php
 │   ├── dashboard.php
 │   └── layout.php
-└── assets/
-    └── css/
-        └── style.css
+├── database.sql
+├── index.php (routeur frontal)
+└── README.md
 
 ```
